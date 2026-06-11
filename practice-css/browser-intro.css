@@ -1,3 +1,8 @@
+span {
+  font-size: small;
+  background-color: #dfdfdf;
+}
+
 p {
 	color: navy;
 }
@@ -7,21 +12,32 @@ p.info {
 }
 
 h1 {
-	background-color: #7f7fcf;
+	color:white;
+	text-shadow: navy 1px 0 10px;
 }
 
 h2 {
-	border: solid 1px black;
+	color:#3f3faf;
 	margin: 5px;
+	background: linear-gradient(0.25turn, white, #ffefaf);
 }
 
 div#zentai {
-	display: flex;
-	flex-direction: row;
-	width: 1024px;
+	display: grid;                      /* グリッドレイアウトにする*/
+    grid-template-columns: 1fr 1fr; /* 3列にする．幅は 1:2:2 の比率*/
+    grid-auto-rows: 200px 200px;        /* 高さは 100px */
+    grid-gap: 10px; 
 }
 
 div#zentai > div {
-	margin-left: 5px;
 	background-color: #ffefaf;
+	padding:5px;
+}
+
+img.sign {
+    float: right;   /* 画像を右に浮かせる */
+
+    width: 100px;
+    height: 100px;
+    margin: 10px 0 10px 10px;
 }

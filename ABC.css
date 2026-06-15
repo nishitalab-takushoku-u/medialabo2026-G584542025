@@ -1,0 +1,15 @@
+h1 {
+	color:rgb(255, 255, 255);
+	text-shadow: rgb(0, 128, 53) 1px 0 10px;
+}
+
+h2 {
+	color:#af3fa9;
+	margin: 5px;
+	background: linear-gradient(0.25turn, white, #affbff);
+}
+
+.special {
+    color: rgb(0, 8, 255);
+    font-weight: bold;
+}

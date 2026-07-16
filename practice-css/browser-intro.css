@@ -18,6 +18,7 @@ h1 {
 
 h2 {
 	color:#3f3faf;
+	font-family: cursive;
 	margin: 5px;
 	background: linear-gradient(0.25turn, white, #ffefaf);
 }
@@ -25,7 +26,8 @@ h2 {
 div#zentai {
 	display: grid;                      /* グリッドレイアウトにする*/
     grid-template-columns: 1fr 1fr; /* 3列にする．幅は 1:2:2 の比率*/
-    grid-auto-rows: 200px 200px;        /* 高さは 100px */
+    grid-auto-rows: 200px 200px; 
+	width :1024px;       /* 高さは 100px */
     grid-gap: 10px; 
 }
 

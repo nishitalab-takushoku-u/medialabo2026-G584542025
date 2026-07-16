@@ -1,5 +1,4 @@
 <!-- 課題4-1: 数当てゲーム -->
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,11 +7,19 @@
     <script src="kazuate.js" defer></script>
   </head>
 
-　　<body>
+<body>
     <h1>数当てゲーム</h1>
+    <p>1から10の間の整数：</p>
+
     <p>
         <span id="kaisu">1</span>回目の予想: 
+    </p>
+    
+	<input type="text" name="AAA" id="AAA" size="6">
+	<span id="answer"></span>
+<button id="calc">回答</button>
         <!-- ここにテキストボックスとボタンを設置 -->
     </p>
     <p id="result">ここに判定結果を表示します</p>
+</body>
 </html>

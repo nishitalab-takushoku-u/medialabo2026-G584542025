@@ -16,9 +16,35 @@ console.log("都市名: "+data.name);
 
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {
-
+  const div = document.createElement("div");
+  div.id = "result";
+  const ul = document.createElement("ul");
+  const items = [
+    "経度: " + data.coord.lon,
+    "緯度: " + data.coord.lat,
+    "天気: " + data.weather[0].description,
+    "最低気温: " + data.main.temp_min,
+    "最高気温: " + data.main.temp_max,
+    "湿度: " + data.main.humidity,
+    "風速: " + data.wind.speed,
+    "風向: " + data.wind.deg,
+    "都市名: " + data.name
+    ];
+    for (const item of items) {
+      const li = document.createElement("li");
+      li.textContent = item;
+      li.className = "special";
+      ul.appendChild(li);
+    }
+    div.appendChild(ul);
+    const p = document.createElement("p");
+    const img = document.createElement("img");
+    img.src = "IMG_TADANOKUMO b.jpg";
+    img.alt = "雲のフリー素材の画像";
+    p.appendChild(img);
+    div.appendChild(p);
+    document.body.appendChild(div);
 }
-
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
 
 

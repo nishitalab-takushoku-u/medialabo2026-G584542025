@@ -4,7 +4,7 @@ h1 {
 }
 
 h2 {
-	color:#af3fa9;
+	color:#ff0000;
 	margin: 5px;
 	background: linear-gradient(0.25turn, white, #affbff);
 }
@@ -12,4 +12,8 @@ h2 {
 .special {
     color: rgb(0, 8, 255);
     font-weight: bold;
+}
+
+body {
+  background: linear-gradient(135deg, #d2c4ff);
 }

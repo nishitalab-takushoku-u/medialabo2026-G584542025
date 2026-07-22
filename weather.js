@@ -16,6 +16,10 @@ console.log("都市名: "+data.name);
 
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {
+  let old = document.querySelector("#result");
+  if (old) {
+    old.remove();
+  }
   const div = document.createElement("div");
   div.id = "result";
   const ul = document.createElement("ul");
@@ -39,26 +43,40 @@ function printDom(data) {
     div.appendChild(ul);
     const p = document.createElement("p");
     const img = document.createElement("img");
+    let weather = data.weather[0].description;
+    console.log(weather);
+
+    if (weather.includes("晴")) {
+    img.src = "Tenki-HARE.png";
+} else if (weather.includes("雨")) {
+    img.src = "weather_rain_AME.png";
+} else if (weather.includes("曇")) {
     img.src = "IMG_TADANOKUMO b.jpg";
-    img.alt = "雲のフリー素材の画像";
-    p.appendChild(img);
-    div.appendChild(p);
-    document.body.appendChild(div);
+} else {
+    img.src = "IMG_TADANOKUMO b.jpg";
+}
+
+p.appendChild(img);
+div.appendChild(p);
+document.body.appendChild(div);
+
 }
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
 let b = document.querySelector('#BButton');
-b.addEventListener('click', BButton);
+b.addEventListener('click', sendRequest);
 
 // 課題6-1 のイベントハンドラ sendRequest() の定義
-function BButton() {
+function sendRequest() {
+
+  let id = document.querySelector("#city").value;
   // URL を設定
-    let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/{id}.json';
+    let url = "https://www.nishita-lab.org/web-contents/jsons/openweather/" +id+ ".json";
 
     // 通信開始
     axios.get(url)
-        .then(showResult)   // 通信成功
-        .catch(showError)   // 通信失敗
-        .then(finish);      // 通信の最後の処理
+      .then(showResult)   // 通信成功
+      .catch(showError)   // 通信失敗
+      .then(finish);      // 通信の最後の処理
 }
 
 // 課題6-1: 通信が成功した時の処理は以下に記述
@@ -72,8 +90,6 @@ function showResult(resp) {
   printDom(data);
   // data をコンソールに出力
   console.log(data);
-  // data.x を出力
-  console.log(data.x);
 }
 
 // 課題6-1: 通信エラーが発生した時の処理
